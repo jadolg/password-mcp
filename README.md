@@ -1,26 +1,36 @@
 # Password Generator MCP Example
 
-This project is a simple example of a password generator tool implemented in Go, using the [mcp-golang](https://github.com/metoro-io/mcp-golang) library. It demonstrates how to register a tool that generates passwords with customizable length, character set, and case.
+This project is a simple example of a password generator tool implemented in Go, using
+the [mcp-golang](https://github.com/metoro-io/mcp-golang) library. It demonstrates how to register a tool that generates
+passwords with customizable length, character set, and case.
 
 ## Usage
 
-1. **Clone the repository**
+1. **Install**
 
-   ```bash
-   git clone git@github.com:jadolg/password-mcp.git
-   cd password-mcp
-   ```
+```bash
+go install github.com/jadolg/password-mcp@latest
+```
 
-2. **Install dependencies**
+2. **Get the binary path**
 
-   ```bash
-   go mod tidy
-   ```
+```bash
+which password-mcp
+```
 
-3. **Run the tool**
+3. **Configure your agent**
 
-   ```bash
-   go run main.go
+```json
+{
+  "mcpServers": {
+    "password-mcp": {
+      "command": "/home/myuser/go/bin/password-mcp",
+      "args": [],
+      "env": {}
+    }
+  }
+}
+
    ```
 
 The tool will start and wait for requests via the MCP protocol (using stdio transport). You can use an MCP-compatible client to interact with it.
