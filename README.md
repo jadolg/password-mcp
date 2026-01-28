@@ -18,7 +18,7 @@ go install github.com/jadolg/password-mcp@latest
 which password-mcp
 ```
 
-3. **Configure your agent**
+3. **Configure your agent using the path from the previous step**
 
 ```json
 {
