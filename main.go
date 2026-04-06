@@ -93,6 +93,7 @@ func main() {
 	s.AddTool(
 		mcp.NewTool("generate_password",
 			mcp.WithDescription("Generate a password with a given length, charset, and case"),
+			mcp.WithReadOnlyHintAnnotation(true),
 			mcp.WithDestructiveHintAnnotation(false),
 			mcp.WithOpenWorldHintAnnotation(false),
 			mcp.WithNumber("length",
