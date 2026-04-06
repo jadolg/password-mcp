@@ -18,7 +18,9 @@ go install github.com/jadolg/password-mcp@latest
 which password-mcp
 ```
 
-3. **Configure your agent using the path from the previous step**
+### Stdio (default)
+
+Configure your MCP client using the binary path from the previous step:
 
 ```json
 {
@@ -30,10 +32,36 @@ which password-mcp
     }
   }
 }
+```
 
-   ```
+### HTTP
 
-The tool will start and wait for requests via the MCP protocol (using stdio transport). You can use an MCP-compatible client to interact with it.
+Start the server with the `--http` flag:
+
+```bash
+password-mcp --http
+```
+
+By default it listens on `:8080`. Use `--addr` to change the address:
+
+```bash
+password-mcp --http --addr :9090
+```
+
+Then configure your MCP client:
+
+```json
+{
+  "mcpServers": {
+    "password-mcp": {
+      "type": "http",
+      "url": "http://localhost:8080/mcp"
+    }
+  }
+}
+```
+
+Adjust the URL if you used a custom `--addr`.
 
 ## Features
 - Generate passwords of any length
