@@ -4,6 +4,10 @@ This project is a simple example of a password generator tool implemented in Go,
 the [mcp-golang](https://github.com/metoro-io/mcp-golang) library. It demonstrates how to register a tool that generates
 passwords with customizable length, character set, and case.
 
+## DISCLAIMER
+
+Passwords will end up in the transcript with the agent making them unsafe by default unless you are using local AI and are able to remove previous conversations! Do NOT use this to generate production passwords unless you are happy with sharing them with your AI provider.
+
 ## Usage
 
 1. **Install**
